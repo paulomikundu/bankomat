@@ -1,0 +1,46 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class AccountDetails extends JFrame {
+    private JLabel firstNameLabel, lastNameLabel, streetLabel, pincodeLabel, balanceLabel;
+    private JTextField firstNameField, lastNameField, streetField, pincodeField, balanceField;
+
+    public AccountDetails() {
+        setTitle("Account Details");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        JPanel panel = new JPanel(new GridLayout(5, 2));
+
+        firstNameLabel = new JLabel("First Name:");
+        firstNameField = new JTextField(20);
+        lastNameLabel = new JLabel("Last Name:");
+        lastNameField = new JTextField(20);
+        streetLabel = new JLabel("Street:");
+        streetField = new JTextField(20);
+        pincodeLabel = new JLabel("Pincode:");
+        pincodeField = new JTextField(20);
+        balanceLabel = new JLabel("Balance:");
+        balanceField = new JTextField(20);
+
+        panel.add(firstNameLabel);
+        panel.add(firstNameField);
+        panel.add(lastNameLabel);
+        panel.add(lastNameField);
+        panel.add(streetLabel);
+        panel.add(streetField);
+        panel.add(pincodeLabel);
+        panel.add(pincodeField);
+        panel.add(balanceLabel);
+        panel.add(balanceField);
+
+        add(panel);
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new AccountDetails();
+    }
+}
