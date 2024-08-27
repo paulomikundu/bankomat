@@ -1,0 +1,58 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class LoginModule extends JFrame implements ActionListener {
+    JLabel userLabel, passLabel;
+    JTextField userField;
+    JPasswordField passField;
+    JButton loginButton, cancelButton;
+
+    public LoginModule() {
+        setTitle("Banking Application Login");
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        userLabel = new JLabel("Username:");
+        passLabel = new JLabel("Password:");
+        userField = new JTextField(10);
+        passField = new JPasswordField(10);
+        loginButton = new JButton("Login");
+        cancelButton = new JButton("Cancel");
+
+        setLayout(new GridLayout(3, 2));
+        add(userLabel);
+        add(userField);
+        add(passLabel);
+        add(passField);
+        add(loginButton);
+        add(cancelButton);
+
+        loginButton.addActionListener(this);
+        cancelButton.addActionListener(this);
+
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == loginButton) {
+            String username = userField.getText();
+            String password = new String(passField.getPassword());
+
+            if (username.equals("admin") && password.equals("password")) {
+                JOptionPane.showMessageDialog(this, "Login Successful!");
+                dispose();
+                // Open the main banking application here
+            } else {
+                JOptionPane.showMessageDialog(this, "Invalid username or password.");
+            }
+        } else if (e.getSource() == cancelButton) {
+            dispose();
+        }
+    }
+
+    public static void main(String[] args) {
+        new LoginModule();
+    }
+}
