@@ -1,0 +1,10 @@
+import javax.swing.*;
+
+public class ATM {
+    public static void main(String[] args) {
+        String accountNumber = JOptionPane.showInputDialog("Enter Account Number:");
+        String depositAmount = JOptionPane.showInputDialog("Enter Deposit Amount:");
+        double balance = Double.parseDouble(depositAmount); balance = 1000+balance;
+        JOptionPane.showMessageDialog(null, "Deposit Successful!\nAccount Number: " + accountNumber + "\nDeposit Amount: " + depositAmount + "\nFinal Balance: " + balance);
+    }
+}
