@@ -1,0 +1,32 @@
+import javax.swing.*;
+
+public class view{
+   public static void main(String[] args) {
+      JFrame frame = new JFrame("ATM");
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      frame.setSize(400, 400);
+      frame.setLayout(null);
+      
+      JLabel balanceLabel = new JLabel("Balance: Rs.1000");
+      balanceLabel.setBounds(50, 50, 200, 30);
+      frame.add(balanceLabel);
+      
+      JLabel accountTypeLabel = new JLabel("Account Type: Savings");
+      accountTypeLabel.setBounds(50, 100, 200, 30);
+      frame.add(accountTypeLabel);
+      
+      JLabel accountDetailsLabel = new JLabel("Account Details: XXXX-XXXX-XXXX-1234");
+      accountDetailsLabel.setBounds(50, 150, 300, 30);
+      frame.add(accountDetailsLabel);
+      
+      JLabel accountHolderNameLabel = new JLabel("Account Holder Name: Paulomi");
+      accountHolderNameLabel.setBounds(50, 200, 300, 30);
+      frame.add(accountHolderNameLabel);
+      
+      JLabel accountHolderAgeLabel = new JLabel("Account Holder Age: NA");
+      accountHolderAgeLabel.setBounds(50, 250, 200, 30);
+      frame.add(accountHolderAgeLabel);
+      
+      frame.setVisible(true);
+   }
+}
